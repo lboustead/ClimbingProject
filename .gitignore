@@ -2,6 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+<<<<<<< HEAD
 /.vs/slnx.sqlite
 /.vs/ClimbingProject/FileContentIndex/219ab371-7536-432c-86cf-db034341d565.vsidx
 /.vs/ClimbingProject/FileContentIndex/86b9983d-a3b2-45f0-8c92-2c0f506cfe2d.vsidx
@@ -18,3 +19,18 @@
 /ClimbingProject/obj/Debug/ClimbingProject.csproj.AssemblyReference.cache
 /ClimbingProject/obj/Release/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
 /ClimbingProject/obj/Release/ClimbingProject.csproj.AssemblyReference.cache
+=======
+/ClimbingProject/bin
+/ClimbingProject/.vs/ClimbingProject/config/applicationhost.config
+/ClimbingProject/.vs/ClimbingProject/FileContentIndex/cd424382-ab51-4c5c-85a7-d5ecafa24c7e.vsidx
+/ClimbingProject/.vs/ClimbingProject/v17/.suo
+/ClimbingProject/obj/Debug/build.force
+/ClimbingProject/obj/Debug/ClimbingProject.csproj.AssemblyReference.cache
+/ClimbingProject/obj/Debug/ClimbingProject.csproj.CopyComplete
+/ClimbingProject/obj/Debug/ClimbingProject.csproj.CoreCompileInputs.cache
+/ClimbingProject/obj/Debug/ClimbingProject.csproj.FileListAbsolute.txt
+/ClimbingProject/obj/Debug/ClimbingProject.dll
+/ClimbingProject/obj/Debug/ClimbingProject.pdb
+/ClimbingProject/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+>>>>>>> a3c6715f4dc8b92cdfba18be6d9a471cc8033abb
+/ClimbingProject/.vs/ClimbingProject/v17/.suo
