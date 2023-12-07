@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ClimbingProject/bin
+/ClimbingProject/.vs/ClimbingProject/config/applicationhost.config
+/ClimbingProject/.vs/ClimbingProject/FileContentIndex/cd424382-ab51-4c5c-85a7-d5ecafa24c7e.vsidx
+/ClimbingProject/.vs/ClimbingProject/v17/.suo
+/ClimbingProject/obj/Debug/build.force
+/ClimbingProject/obj/Debug/ClimbingProject.csproj.AssemblyReference.cache
+/ClimbingProject/obj/Debug/ClimbingProject.csproj.CopyComplete
+/ClimbingProject/obj/Debug/ClimbingProject.csproj.CoreCompileInputs.cache
+/ClimbingProject/obj/Debug/ClimbingProject.csproj.FileListAbsolute.txt
+/ClimbingProject/obj/Debug/ClimbingProject.dll
+/ClimbingProject/obj/Debug/ClimbingProject.pdb
+/ClimbingProject/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
