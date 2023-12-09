@@ -103,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ClimbingDatabase.mdf" />
+    <Content Include="App_Data\ClimbingDatabase_log.ldf">
+      <DependentUpon>ClimbingDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -122,7 +125,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="Global.asax" />
     <Content Include="LocationPage.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="RoutePage.aspx" />
@@ -197,9 +199,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LocationPage.aspx.cs">
       <DependentUpon>LocationPage.aspx</DependentUpon>
