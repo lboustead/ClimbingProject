@@ -13,5 +13,8 @@ namespace ClimbingProject
         {
 
         }
+
+        //get User Name
+        string userName = HttpContext.Current.User.Identity.Name;
     }
 }
