@@ -1,8 +1,10 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ClimbingProject._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ClimbingProject.Default" %>
 
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
     Hello
     <asp:LoginName ID="UserName" runat="server" />
+    &nbsp;
+    <asp:Label ID="lbl1" runat="server" Text="Label"></asp:Label>
     <br />
     <p>
 &nbsp;&nbsp;

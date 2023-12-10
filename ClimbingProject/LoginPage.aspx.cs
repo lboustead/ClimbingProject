@@ -1,9 +1,7 @@
-﻿using ClimbingProject;
-using Microsoft.Ajax.Utilities;
-using System;
+﻿using System;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
+using System.Runtime.Remoting.Contexts;
+using System.Web;
 using System.Web.Security;
 using System.Web.UI.WebControls;
 
@@ -40,8 +38,12 @@ namespace ClimbingProject
 
                     if(testPassword != null)
                     {
-                        FormsAuthentication.SetAuthCookie(userName, true);
-                        Response.Redirect("Default.aspx", true);
+                        FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, userName, DateTime.Now, DateTime.Now.AddMinutes(60), false, "");
+                        string encrypted = FormsAuthentication.Encrypt(ticket);
+                        HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
+                        cookie.Name = "SESSION";
+                        Response.Cookies.Add(cookie);
+                        Response.Redirect("Home.aspx", true);
                     }
                     else
                     {

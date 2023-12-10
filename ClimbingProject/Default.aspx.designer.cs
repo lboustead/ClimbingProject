@@ -11,7 +11,7 @@ namespace ClimbingProject
 {
 
 
-    public partial class _Default
+    public partial class SendPage
     {
 
         /// <summary>

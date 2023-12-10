@@ -126,6 +126,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Home.aspx" />
     <Content Include="LocationPage.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="RoutePage.aspx" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="LocationPage.aspx.cs">
       <DependentUpon>LocationPage.aspx</DependentUpon>
