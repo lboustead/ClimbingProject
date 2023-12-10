@@ -38,12 +38,13 @@ namespace ClimbingProject
 
                     if(testPassword != null)
                     {
-                        FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, userName, DateTime.Now, DateTime.Now.AddMinutes(60), false, "");
-                        string encrypted = FormsAuthentication.Encrypt(ticket);
-                        HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
-                        cookie.Name = "SESSION";
-                        Response.Cookies.Add(cookie);
-                        Response.Redirect("Home.aspx", true);
+                        //getting user id
+                        SqlCommand getUserID = new SqlCommand("SELECT ClimberID FROM NetUser WHERE Username = '" + userName + "'", conn);
+
+                        int climberID = Convert.ToInt32(getUserID.ExecuteScalar().ToString());
+
+                        //Session["field1"] = climberID;
+                        Response.Redirect("Home.aspx?field1="+climberID, true);
                     }
                     else
                     {
