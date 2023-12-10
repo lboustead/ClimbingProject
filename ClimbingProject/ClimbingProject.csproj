@@ -103,10 +103,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ClimbingDatabase.mdf" />
-    <Content Include="App_Data\ClimbingDatabase_log.ldf">
-      <DependentUpon>ClimbingDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
