@@ -28,7 +28,7 @@ namespace ClimbingProject
             string getFullNameQuery = "SELECT CONCAT(FirstName,' ',LastName) FROM Climber WHERE Climber.ClimberID = '"+climberID+"'";
             string highestGradeSentQuery = "SELECT GradeDescription FROM Grades WHERE Grade_ID in (SELECT MAX(Grade_ID) FROM Grades, NetUser, Route, Sends WHERE NetUser.ClimberID = '"+climberID+"' AND NetUser.ClimberID = Sends.ClimberID AND Sends.RouteID = Route.RouteID AND Route.GradeID = Grades.Grade_ID)";
             string averageGradeSentQuery = "SELECT GradeDescription FROM Grades WHERE Grade_ID in (SELECT ROUND(AVG(Grade_ID), 0) FROM Grades, NetUser, Route, Sends WHERE NetUser.ClimberID = '"+climberID+"' AND NetUser.ClimberID = Sends.ClimberID AND Sends.RouteID = Route.RouteID AND Route.GradeID = Grades.Grade_ID)\r\n";
-            string mostClimbedLocationQuery = "";
+            string mostClimbedLocationQuery = "SELECT CONCAT(Description,', ' , City, ', ', StateName) FROM LocationTable WHERE Location_ID in (SELECT LocationID FROM NetUser, Sends, Route, LocationTable WHERE NetUser.ClimberID = '"+climberID+"' AND NetUser.ClimberID = Sends.ClimberID AND Sends.RouteID = Route.RouteID AND Route.LocationID = LocationTable.Location_ID GROUP BY LocationID ORDER BY COUNT(LocationID) DESC OFFSET 0 ROWS FETCH FIRST 1 ROWS ONLY)\r\n";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -46,6 +46,9 @@ namespace ClimbingProject
 
                 //setting AverageGradeSent
                 AGSlbl.Text = getAverageGradeSent.ExecuteScalar().ToString();
+
+                //setting MostClimbedLocation
+                MCLlbl.Text = getMostClimbedLocation.ExecuteScalar().ToString();
 
                 conn.Close();
             }
