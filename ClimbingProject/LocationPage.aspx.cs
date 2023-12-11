@@ -11,8 +11,8 @@ namespace ClimbingProject
     public partial class LocationPage : System.Web.UI.Page
     {
         // Connect to the database - LOCAL CONNECTION STRING
-        private string conn = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chanc\\OneDrive\\Desktop\\ClimbingProject\\ClimbingProject\\App_Data\\ClimbingDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
-
+        //private string conn = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chanc\\OneDrive\\Desktop\\ClimbingProject\\ClimbingProject\\App_Data\\ClimbingDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
+        private string conn = System.Configuration.ConfigurationManager.ConnectionStrings["ClimbingDatabaseConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
