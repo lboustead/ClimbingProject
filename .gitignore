@@ -20,3 +20,6 @@
 /ClimbingProject/obj
 /ClimbingProject/.vs
 /ClimbingProject/.vs/ClimbingProject/v17/.suo
+/ClimbingProject/Web.config
+/ClimbingProject/Web.Debug.config
+/ClimbingProject/Web.Release.config
