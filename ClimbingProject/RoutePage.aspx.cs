@@ -12,7 +12,7 @@ namespace ClimbingProject
         protected void Page_Load(object sender, EventArgs e)
         {
             //Obtain climberid
-            int locationID = Convert.ToInt32(Session["climberid"].ToString());
+            int climberID = Convert.ToInt32(Session["climberid"].ToString());
 
             // Don't execute on postback so that the selected index value is correct
             if (!IsPostBack)
@@ -21,7 +21,7 @@ namespace ClimbingProject
                 string queryLocation = "SELECT Location_ID, Description FROM LocationTable";
 
                 // Query to retrieve grade id/description
-                string queryGrade = "SELECT GradeID, GradeDescription FROM Grades";
+                string queryGrade = "SELECT Grade_ID, GradeDescription FROM Grades";
 
                 // Create a DataTable to store the results
                 DataTable dataTableLocation = new DataTable();
@@ -54,13 +54,13 @@ namespace ClimbingProject
                 // Bind the location dropdown
                 drpLocation.DataSource = dataTableLocation;
                 drpLocation.DataTextField = "Description";
-                drpLocation.DataValueField = "LocationID";
+                drpLocation.DataValueField = "Location_ID";
                 drpLocation.DataBind();
 
                 // Bind the grade dropdown
                 drpGrade.DataSource = dataTableGrade;
                 drpGrade.DataTextField = "GradeDescription";
-                drpGrade.DataValueField = "GradeID";
+                drpGrade.DataValueField = "Grade_ID";
                 drpGrade.DataBind();
             }
         }
