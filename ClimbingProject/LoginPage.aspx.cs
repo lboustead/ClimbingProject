@@ -10,15 +10,12 @@ namespace ClimbingProject
     public partial class LoginPage : System.Web.UI.Page
     {
         string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\lucas\\source\\repos\\Assignment5\\ClimbingProject\\ClimbingProject\\App_Data\\ClimbingDatabase.mdf;Integrated Security=True";
-        ClimbingDataContext dbcon;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
         protected void Login1_Authenticate1(object sender, AuthenticateEventArgs e)
         {
-            dbcon = new ClimbingDataContext(connString);
-
             //assigning username and password
             string userName = Login1.UserName;
             string pass = Login1.Password;
