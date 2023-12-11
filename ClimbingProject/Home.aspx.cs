@@ -1,23 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Net;
-using System.Reflection.Emit;
-using System.Runtime.Remoting.Contexts;
-using System.Web;
-using System.Web.Routing;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ClimbingProject
 {
+    
     public partial class Home : System.Web.UI.Page
     {
         
         //Establish connection string
-        string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\lucas\\source\\repos\\Work\\ClimbingProject\\App_Data\\ClimbingDatabase.mdf;Integrated Security=True";
+        //string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\lucas\\source\\repos\\Work\\ClimbingProject\\App_Data\\ClimbingDatabase.mdf;Integrated Security=True";
+        string connString = System.Configuration.ConfigurationManager.ConnectionStrings["ClimbingDatabaseConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
