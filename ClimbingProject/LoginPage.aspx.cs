@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Runtime.Remoting.Contexts;
-using System.Web;
-using System.Web.Security;
 using System.Web.UI.WebControls;
 
 namespace ClimbingProject
 {
     public partial class LoginPage : System.Web.UI.Page
     {
-        //string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\lucas\\source\\repos\\Assignment5\\ClimbingProject\\ClimbingProject\\App_Data\\ClimbingDatabase.mdf;Integrated Security=True";
+        //connectionString setup
         string connString = System.Configuration.ConfigurationManager.ConnectionStrings["ClimbingDatabaseConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,11 +35,8 @@ namespace ClimbingProject
                     {
                         //getting user id
                         SqlCommand getUserID = new SqlCommand("SELECT ClimberID FROM NetUser WHERE Username = '" + userName + "'", conn);
-
-                        int climberID = Convert.ToInt32(getUserID.ExecuteScalar().ToString());
-
-                        //Session["field1"] = climberID;
-                        Response.Redirect("Home.aspx?field1="+climberID, true);
+                        Session["climberid"] = Convert.ToInt32(getUserID.ExecuteScalar().ToString());
+                        Response.Redirect("Home.aspx", true);
                     }
                     else
                     {

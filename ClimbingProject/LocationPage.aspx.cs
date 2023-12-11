@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ClimbingProject
 {
     public partial class LocationPage : System.Web.UI.Page
     {
         // Connect to the database - LOCAL CONNECTION STRING
-        //private string conn = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chanc\\OneDrive\\Desktop\\ClimbingProject\\ClimbingProject\\App_Data\\ClimbingDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
         private string conn = System.Configuration.ConfigurationManager.ConnectionStrings["ClimbingDatabaseConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,8 +15,11 @@ namespace ClimbingProject
 
         protected void btnAddLocation_Click(object sender, EventArgs e)
         {
+            //Obtain climberid
+            int locationID = Convert.ToInt32(Session["climberid"].ToString());
+
             // All fields are filled with validators - ensure they are all less than 50 characters
-            if(txtCity.Text.Length >= 50 || txtDescription.Text.Length >= 50 || txtState.Text.Length >= 50)
+            if (txtCity.Text.Length >= 50 || txtDescription.Text.Length >= 50 || txtState.Text.Length >= 50)
             {
                 lblErrorMessage.Text = "Please enter less than 50 characters";
                 return;

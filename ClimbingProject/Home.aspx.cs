@@ -3,18 +3,16 @@ using System.Data.SqlClient;
 
 namespace ClimbingProject
 {
-    
     public partial class Home : System.Web.UI.Page
     {
         
         //Establish connection string
-        //string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\lucas\\source\\repos\\Work\\ClimbingProject\\App_Data\\ClimbingDatabase.mdf;Integrated Security=True";
         string connString = System.Configuration.ConfigurationManager.ConnectionStrings["ClimbingDatabaseConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             //Get climberID
-            int climberID = Convert.ToInt32(Request.QueryString["field1"].ToString());
+            int climberID = Convert.ToInt32(Session["climberid"].ToString());
 
             //get full name query
             string getFullNameQuery = "SELECT CONCAT(FirstName,' ',LastName) FROM Climber WHERE Climber.ClimberID = '"+climberID+"'";

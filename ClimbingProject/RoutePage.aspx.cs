@@ -1,29 +1,24 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Net.NetworkInformation;
-using System.Web;
-using System.Web.DynamicData;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ClimbingProject
 {
     public partial class RoutePage : System.Web.UI.Page
     {
         // Connect to the database - LOCAL CONNECTION STRING
-        //private string conn = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chanc\\OneDrive\\Desktop\\ClimbingProject\\ClimbingProject\\App_Data\\ClimbingDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
         string conn = System.Configuration.ConfigurationManager.ConnectionStrings["ClimbingDatabaseConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Obtain climberid
+            int locationID = Convert.ToInt32(Session["climberid"].ToString());
+
             // Don't execute on postback so that the selected index value is correct
             if (!IsPostBack)
             {
                 // Query to retrieve locations id/description
-                string queryLocation = "SELECT LocationID, Description FROM LocationTable";
+                string queryLocation = "SELECT Location_ID, Description FROM LocationTable";
 
                 // Query to retrieve grade id/description
                 string queryGrade = "SELECT GradeID, GradeDescription FROM Grades";
