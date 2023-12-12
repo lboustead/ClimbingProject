@@ -16,7 +16,11 @@ namespace ClimbingProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //Get climberID if not null. If null, redirect to login
+            if (Session["climberid"] == null)
+            {
+                Response.Redirect("LoginPage.aspx", true);
+            }
 
             // Don't execute on postback so that the selected index value is correct
             if (!IsPostBack)

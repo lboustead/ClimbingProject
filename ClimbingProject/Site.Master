@@ -1,14 +1,6 @@
 ﻿2<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ClimbingProject.SiteMaster" %>
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
-
-    <asp:PlaceHolder runat="server">
+<!DOCTYPE html><html lang="en"><head runat="server"><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title><%: Page.Title %> - My ASP.NET Application</title><asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
@@ -48,7 +40,7 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="SendPage.aspx">Sends</a></li> 
                         <li class="nav-item"><a class="nav-link" runat="server" href="RoutePage.aspx">Route</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="LocationPage.aspx">Locations</a></li> 
+                        <li class="nav-item"><a class="nav-link" runat="server" href="LocationPage.aspx">Locations</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +50,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Climbing Club Application</p>
             </footer>
         </div>
     </form>
